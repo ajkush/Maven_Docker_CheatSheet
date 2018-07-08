@@ -6,10 +6,12 @@ Docker Images:
  
 
 Docker Container:
+
+
 	A running instance of an image is called a container. Docker launches them using the Docker images as read-only templates. 
 	
 	
-Run Docker
+    Run Docker
 	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 	docker stop  :- Stop container, data loss
 	docker ps -a 	:- Docker client will list a table containing container IDs
