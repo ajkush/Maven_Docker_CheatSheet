@@ -37,3 +37,13 @@ Docker Networking:
 Maven CheatSheet:
 
     mvn spring-boot:run
+    
+    
+Git Command
+    
+    echo "# GitCheatSheet" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin https://github.com/ajkush/GitCheatSheet.git
+    git push -u origin master
