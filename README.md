@@ -21,6 +21,7 @@ Docker Container:
     docker search <image-name>  :- Search docker image
     docker pull ubuntu:16.04  :- Pull docker image
     
+
     
 Docker Networking:
 
@@ -32,11 +33,78 @@ Docker Networking:
     docker network connect
     docker network disconnect
     docker network inspect
+    
+    EXPOSE 8080 :- (1)inside docker file
+    docker run -p 8080:8080 -it rest-example    :- (2)map port
         
+Dockerfile (Its Filename. w/o extension)
 
+    FROM <image>, or FROM <image>:<tag>, or FROM <image>@<digest>
+    MAINTAINER authors_name    
+    ADD config.json projectRoot/ :- will add the config.json file to <WORKDIR>/projectRoot, archive extraction, downloading files through URL)
+    COPY <source path or URL> <destination path > ):- (Simple to copy from Source to destination)
+    RUN apt-get update
+    RUN apt-get install -y openjdk-8-jre 
+    CMD java -jar rest-example-0.1.0.jar
+    LABEL "key"="value"
+    ENV JAVA_HOME /var/lib/java8
+    USER tomcat
+    HEALTHCHECK --interval=5m --timeout=2s --retries=3 CMD curl -f http://localhost/ping || exit 1  
+    
+Creating an image using Maven
+    Plugin:- https://github.com/fabric8io/docker-maven-plugin
+    2 Tasks: 
+        1.) Building and pushing Docker images which contain build artifacts
+        2.) Starting and stopping Docker containers for integration testing and development.
+    Fabric8 Docker plugin provides a couple of Maven goals:
+        docker:build    docker:push    docker:start docker:stop docker:watch (it run docker:build, docker:run )  docker:remove  docker:volume-create, docker:volume-remove  
+    
+    
+    Steps to build image using maven : 
+    1.) Include plugin into maven.
+    2.) Run build command ( mvn clean package docker:build )
+    
+        Maven Docker plugin config: 
+            <configuration> have 2 tags: 
+                <build> :- configuration specifying how images are built
+                <run>:- configuration describing how containers should be created and started
+                
+                
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.20.1</version>
+                    <configuration>
+                      <images>
+                        <image>
+                          <name>build-name:${project.version}
+                          </name>
+                          <alias>build-name</alias>
+                          <build>
+                            <from>openjdk:latest</from>
+                            <assembly>
+                              <descriptorRef>artifact</descriptorRef>
+                            </assembly>
+                            <cmd>java -jar maven/${project.name}-${project.version}.jar</cmd>
+                          </build>
+                          <run>
+                            <wait>
+                              <log>Hello World!</log>
+                            </wait>
+                          </run>
+                        </image>
+                      </images>
+                    </configuration>
+                  </plugin>
+    
+        
+            Maven build command : mvn clean package docker:build
+    
 Maven CheatSheet:
 
     mvn spring-boot:run
+    mvn -o clean install :- -o work offline
+    mvn clean package
     
     
 Git Command
@@ -47,3 +115,9 @@ Git Command
     git commit -m "first commit"
     git remote add origin https://github.com/ajkush/GitCheatSheet.git
     git push -u origin master
+    
+    
+Swagger:
+    
+    Include swagger and UI maven dependency and access below URL.
+    http://localhost:8082/swagger-ui.html#/
