@@ -124,10 +124,11 @@ Create a new branch
 Switching between branches locally
 
     git checkout master
-
+	
 Show Branch
 
     git branch
+    git branch -a
     
 Stage your changes:
 To add and discard changes
