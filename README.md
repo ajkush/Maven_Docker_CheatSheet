@@ -116,6 +116,28 @@ Git Command
     git remote add origin https://github.com/ajkush/GitCheatSheet.git
     git push -u origin master
     
+    git status
+Create a new branch
+
+    git checkout -b new-branch existing-branch
+
+Switching between branches locally
+
+    git checkout master
+
+Show Branch
+
+    git branch
+    
+Stage your changes:
+To add and discard changes
+
+    (use "git add <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+
+Commit your changes
+
+    git commit -m "added my github name"
     
 Swagger:
     
