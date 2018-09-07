@@ -139,7 +139,11 @@ To add and discard changes
 Commit your changes
 
     git commit -m "added my github name"
-    
+
+Remove Local Branch
+
+    git branch -d the_local_branch
+
 Swagger:
     
     Include swagger and UI maven dependency and access below URL.
