@@ -148,3 +148,10 @@ Swagger:
     
     Include swagger and UI maven dependency and access below URL.
     http://localhost:8082/swagger-ui.html#/
+    
+Vue.js:
+
+	npm install -g vue-cli
+	npm install
+	npm run dev
+
