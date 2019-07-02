@@ -144,6 +144,14 @@ Remove Local Branch
 
     git branch -d the_local_branch
 
+Remove or edit *staged* commit
+
+	git commit -m "Something terribly misguided"
+	git reset HEAD~
+	<< edit your files files as necessary >>
+	git add ...
+	git commit -c ORIG_HEAD
+
 Swagger:
     
     Include swagger and UI maven dependency and access below URL.
