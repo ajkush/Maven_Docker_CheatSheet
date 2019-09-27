@@ -182,4 +182,4 @@ Feign declerative client:
 	
 	Add property: 
 	
-		logging.level.com.decathlon.ibuy.bosstransactionvalidator.feign.cashflow.api.CashFlowApiClient=DEBUG
+		logging.level.<package>.ApiClient=DEBUG
