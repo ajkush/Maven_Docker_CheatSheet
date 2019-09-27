@@ -167,3 +167,19 @@ Http Response Codes:
 
 	https://httpstatuses.com
 
+
+Feign declerative client:
+
+	enable logging:
+	
+		@Configuration
+		public class FooConfiguration {
+			@Bean
+			Logger.Level feignLoggerLevel() {
+				return Logger.Level.FULL;
+			}
+		}
+	
+	Add property: 
+	
+		logging.level.com.decathlon.ibuy.bosstransactionvalidator.feign.cashflow.api.CashFlowApiClient=DEBUG
