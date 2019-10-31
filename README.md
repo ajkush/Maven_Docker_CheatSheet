@@ -152,6 +152,13 @@ Remove or edit *staged* commit
 	git add ...
 	git commit -c ORIG_HEAD
 
+Fetch / Pull forcefully all tha changes
+
+	git fetch --all
+	git reset --hard origin/master
+	git pull origin master
+
+
 Swagger:
     
     Include swagger and UI maven dependency and access below URL.
