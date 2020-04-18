@@ -105,7 +105,7 @@ Maven CheatSheet:
     mvn spring-boot:run
     mvn -o clean install :- -o work offline
     mvn clean package
-    
+    mvn versions:display-dependency-updates
     
 Git Command
     
