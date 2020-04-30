@@ -190,3 +190,16 @@ Feign declerative client:
 	Add property: 
 	
 		logging.level.<package>.ApiClient=DEBUG
+		
+Check application Performance:
+
+		<dependency>
+		  <groupId>org.openjdk.jmh</groupId>
+		  <artifactId>jmh-core</artifactId>
+		  <version>1.17.4</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.openjdk.jmh</groupId>
+		  <artifactId>jmh-generator-annprocess</artifactId>
+		  <version>1.17.4</version>
+		</dependency>		
