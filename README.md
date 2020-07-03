@@ -203,3 +203,29 @@ Check application Performance:
 		  <artifactId>jmh-generator-annprocess</artifactId>
 		  <version>1.17.4</version>
 		</dependency>		
+
+
+Kubernetes :
+
+	minikube stop
+	minikube delete
+	minikube status
+	minikube start
+	minikube addons enable ingress
+	minikube dashboard
+	minikube ip
+
+	helm list
+
+	Delete and apply stable release:
+	helm delete <SERVICE>
+	helm repo add nginx-stable https://helm.nginx.com/stable
+	helm install nginx-ing nginx-stable/nginx-ingress
+	helm install -f values.yaml --set vault.roleId=<ROLEID> --set vault.secretId=<SECRETID> <SERVICE> .
+
+	kubectl get all
+	kubectl get ing
+	kubectl get ing --all-namespaces
+	kubectl edit po <POD>
+
+	kubectl get endpointslices
