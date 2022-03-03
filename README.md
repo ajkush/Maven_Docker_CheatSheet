@@ -179,13 +179,11 @@ Feign declerative client:
 
 	enable logging:
 	
-		@Configuration
-		public class FooConfiguration {
-			@Bean
-			Logger.Level feignLoggerLevel() {
-				return Logger.Level.FULL;
-			}
-		}
+	feign:
+	  client:
+	    config:
+	      default:
+		loggerLevel: FULL
 	
 	Add property: 
 	
