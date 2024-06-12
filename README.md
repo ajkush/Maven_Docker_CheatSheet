@@ -153,7 +153,12 @@ Remove or edit *staged* commit
 	git commit -c ORIG_HEAD
 
 Fetch / Pull forcefully all tha changes
-
+	Soft : 
+	
+	git reset --soft origin/develop
+	
+	Hard :
+	
 	git fetch --all
 	git reset --hard origin/master
 	git pull origin master
